@@ -10,11 +10,10 @@ $ npm install jekyll-md-highlight-parser
 
 ## Usage
 
-import mdParse from 'jekyll-md-highlight-parser';
-mdParse(string)
-
+```javascript
+import mdParse from "jekyll-md-highlight-parser";
+mdParse(string);
 ```
-
 
 ## Badges
 
@@ -34,4 +33,3 @@ mdParse(string)
 [user]: https://github.com/piyushsi
 [email]: mailto:piyushsinha2309@gmail.com
 [url]: http://piyushsi.me
-```

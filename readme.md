@@ -26,10 +26,3 @@ mdParse(string);
 
 [MIT](LICENSE)
 
-## Author
-
-[piyushsi][user] &lt;[piyushsinha2309@gmail.com][email]&gt; ([http://piyushsi.me][url])
-
-[user]: https://github.com/piyushsi
-[email]: mailto:piyushsinha2309@gmail.com
-[url]: http://piyushsi.me

@@ -11,7 +11,7 @@ $ npm install jekyll-md-highlight-parser
 ## Usage
 
 ```javascript
-import mdParse from "jekyll-md-highlight-parser";
+import { mdParse } from "jekyll-md-highlight-parser";
 mdParse(string);
 ```
 
@@ -25,4 +25,3 @@ mdParse(string);
 ## License
 
 [MIT](LICENSE)
-

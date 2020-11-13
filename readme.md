@@ -11,14 +11,17 @@ $ npm install jekyll-md-highlight-parser
 ## Usage
 
 ```javascript
+let mdJekyll = `{% highlight ruby %}
+puts "I love ice cream"
+{% endhighlight %}`;
 import { mdParse } from "jekyll-md-highlight-parser";
-console.log({string,mdParse:mdParse(string)};
+console.log({ mdJekyll, mdParse: mdParse(mdJekyll) });
 
 // using ReactMarkdown && CodeBlock
 
 <ReactMarkdown
   escapeHtml={true}
-  source={mdParse(string)}
+  source={mdParse(mdJekyll)}
   renderers={{ code: CodeBlock }}
 ></ReactMarkdown>;
 ```

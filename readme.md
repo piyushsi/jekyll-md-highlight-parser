@@ -12,7 +12,15 @@ $ npm install jekyll-md-highlight-parser
 
 ```javascript
 import { mdParse } from "jekyll-md-highlight-parser";
-mdParse(string);
+console.log({string,mdParse:mdParse(string)};
+
+// using ReactMarkdown && CodeBlock
+
+<ReactMarkdown
+  escapeHtml={true}
+  source={mdParse(string)}
+  renderers={{ code: CodeBlock }}
+></ReactMarkdown>;
 ```
 
 ## Badges

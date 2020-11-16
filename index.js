@@ -1,4 +1,4 @@
-function mdParse(string) {
+function hParse(string) {
   return string
     .replace(/{% endhighlight %}/g, "~~~")
     .replace(/{% highlight log %}/g, "~~~")
@@ -77,6 +77,7 @@ function mdParse(string) {
     .replace(/{% highlight gradle %}/g, "~~~gradle")
     .replace(/{% highlight groovy %}/g, "~~~groovy")
     .replace(/{% highlight haml %}/g, "~~~haml")
+    .replace(/{% highlight html %}/g, "~~~html")
     .replace(/{% highlight handlebars %}/g, "~~~handlebars")
     .replace(/{% highlight html[+]handlebars %}/g, "~~~handlebars")
     .replace(/{% highlight haskell %}/g, "~~~haskell")
@@ -199,6 +200,25 @@ function mdParse(string) {
     .replace(/{% highlight zephir %}/g, "~~~zephir");
 }
 
+function iParse(code) {
+  if (code.includes("{% image")) {
+    console.log(code);
+    var image = `/blog_images/${code.split("{% image ")[1].split("alt")[0]}`;
+    var alt = code.split("{% image ")[1].split("alt:'")[1].split("'")[0];
+    var value = `![${alt}](${image.replace(/"/g, "")})`;
+    var output =
+      code.split("{% image ")[0] +
+      value +
+      code.substr(
+        code.split("{% image ")[0].length + image.length + alt.length + 6
+      );
+    return iParse(output);
+  } else {
+    return code;
+  }
+}
+
 module.exports = {
-  mdParse,
+  hParse,
+  iParse,
 };

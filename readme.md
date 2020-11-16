@@ -1,6 +1,6 @@
 # jekyll-md-highlight-parser
 
-A [Jekyll](https://jekyllrb.com/) Markdown Highlight parser.
+A [Jekyll](https://jekyllrb.com/) Markdown Highlight && Image parser.
 
 ## Installation
 
@@ -14,14 +14,21 @@ $ npm install jekyll-md-highlight-parser
 let mdJekyll = `{% highlight ruby %}
 puts "I love ice cream"
 {% endhighlight %}`;
-import { mdParse } from "jekyll-md-highlight-parser";
-console.log({ mdJekyll, mdParse: mdParse(mdJekyll) });
 
-// using ReactMarkdown && CodeBlock
+// Parse Highlight using ReactMarkdown && CodeBlock
+import { hParse } from "jekyll-md-highlight-parser";
 
 <ReactMarkdown
   escapeHtml={true}
   source={mdParse(mdJekyll)}
+  renderers={{ code: CodeBlock }}
+></ReactMarkdown>;
+
+// Parse Highlight with image using ReactMarkdown
+import { hParse, iParse } from "jekyll-md-highlight-parser";
+<ReactMarkdown
+  escapeHtml={true}
+  source={iParse(hParse(mdJekyll))}
   renderers={{ code: CodeBlock }}
 ></ReactMarkdown>;
 ```

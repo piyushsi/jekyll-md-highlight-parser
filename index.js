@@ -200,10 +200,10 @@ function hParse(string) {
     .replace(/{% highlight zephir %}/g, "~~~zephir");
 }
 
-function iParse(code) {
+function iParse(code, id) {
   if (code.includes("{% image")) {
     console.log(code);
-    var image = `/blog_images/${code.split("{% image ")[1].split("alt")[0]}`;
+    var image = `${id ? id : ""}/${code.split("{% image ")[1].split("alt")[0]}`;
     var alt = code.split("{% image ")[1].split("alt:'")[1].split("'")[0];
     var value = `![${alt}](${image.replace(/"/g, "")})`;
     var output =

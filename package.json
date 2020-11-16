@@ -1,6 +1,6 @@
 {
   "name": "jekyll-md-highlight-parser",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "A  module to Parse Jekyll Markdown Highlights and Images.",
   "main": "index.js",
   "author": "Piyush Sinha <piyushsinha2309@gmail.com> (https://piyushsi.me)",
